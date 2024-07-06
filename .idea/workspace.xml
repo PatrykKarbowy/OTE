@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="configured pom.xml file and added driver + Main.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/locators/MainPageLocators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/BasicPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" afterDir="false" />
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added locators, basic functionality to MainPage">
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/MainPageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/SearchConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/locators/MainPageLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/locators/MainPageLocators.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/MainPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/operadriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sha512_sum" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Honda HRV configuration.executor": "Run",
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "olx-main-page",
@@ -58,6 +63,16 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Togo\Desktop\PATRYK\Coding\Java\Automat\OTE-Olx_To_Excel\src\main\resources" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Honda HRV configuration" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OTE-Olx_To_Excel" />
+      <option name="PROGRAM_PARAMETERS" value="-p &quot;Honda HRV&quot; -l &quot;Żory&quot; -e 10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -84,12 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720216828672</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added locators, basic functionality to MainPage">
+      <option name="closed" value="true" />
+      <created>1720219501017</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720219501017</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="configured pom.xml file and added driver + Main.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="configured pom.xml file and added driver + Main.java" />
+    <MESSAGE value="Added locators, basic functionality to MainPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added locators, basic functionality to MainPage" />
   </component>
 </project>
