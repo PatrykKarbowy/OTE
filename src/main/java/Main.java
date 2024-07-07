@@ -9,7 +9,7 @@ public class Main {
         CommandLine cmd = new CommandLine(config);
         cmd.parseArgs(args);
 
-        MainWorker mainWorker = new MainWorker();
+        MainWorker mainWorker = new MainWorker(config);
         mainWorker.start();
     }
 }

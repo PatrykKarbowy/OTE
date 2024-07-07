@@ -5,8 +5,13 @@ import pages.MainPage;
 
 public class MainPageSteps {
     private MainPage mainPage;
+    private WebDriver driver;
 
-    public void searchPhrase(String phrase, String location, WebDriver driver){
+    public MainPageSteps(WebDriver driver){
+        this.driver = driver;
+    }
+
+    public void searchPhrase(String phrase, String location){
         mainPage = new MainPage(driver);
         mainPage.acceptCookies();
         mainPage.writeSearchPhrase(phrase);

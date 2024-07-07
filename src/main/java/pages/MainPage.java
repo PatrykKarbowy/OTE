@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
+
 public class MainPage extends BasicPage {
 
     @FindBy(xpath = MainPageLocators.SEARCH_BAR_XPATH)
@@ -15,7 +17,7 @@ public class MainPage extends BasicPage {
     @FindBy(xpath = MainPageLocators.SEARCH_LOCATION_XPATH)
     private WebElement searchLocation;
 
-    @FindBy(xpath = MainPageLocators.SEARCH_BUTTON_XPATH)
+    @FindBy(css = MainPageLocators.SEARCH_BUTTON_CSS_SELECTOR)
     private WebElement searchButton;
 
     @FindBy(xpath = MainPageLocators.ACCEPT_COOKIES_BUTTON_XPATH)
@@ -38,8 +40,10 @@ public class MainPage extends BasicPage {
     public void writeSearchLocation(String location){
         wait.until(ExpectedConditions.visibilityOf(searchLocation));
         searchLocation.sendKeys(location);
-        WebElement searchLocationSuggestion = driver.findElement(By.xpath(MainPageLocators.SEARCH_LOCATION_SUGGESTION_XPATH));
-        searchLocationSuggestion.click();
+        List<WebElement> searchLocationSuggestions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
+                By.cssSelector(MainPageLocators.SEARCH_LOCATION_SUGGESTION_CSS_SELECTOR)));
+        //Click always on first suggestion
+        searchLocationSuggestions.get(0).click();
     }
 
     public void searchResults(){
