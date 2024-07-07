@@ -4,7 +4,7 @@ import worker.MainWorker;
 
 public class Main {
     public static void main(String[] args){
-        //Search Arguments parsing
+        //Search Arguments parsing from CommandLine
         SearchConfig config = new SearchConfig();
         CommandLine cmd = new CommandLine(config);
         cmd.parseArgs(args);
