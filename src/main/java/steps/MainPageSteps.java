@@ -1,14 +1,14 @@
 package steps;
 
 import org.openqa.selenium.WebDriver;
+import pages.BasicPage;
 import pages.MainPage;
 
-public class MainPageSteps {
+public class MainPageSteps extends BasicPage {
     private MainPage mainPage;
-    private WebDriver driver;
 
     public MainPageSteps(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     public void searchPhrase(String phrase, String location){
