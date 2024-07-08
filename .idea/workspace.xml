@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Fixed Comment">
-      <change afterPath="$PROJECT_DIR$/src/main/java/locators/SearchResultPageLocators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added SearchResultPage and SearchResultPageLocators. Also fixed MainPageSteps">
+      <change afterPath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/SearchItemObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/MainPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/MainPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/SearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SearchConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720347099047</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added SearchResultPage and SearchResultPageLocators. Also fixed MainPageSteps">
+      <option name="closed" value="true" />
+      <created>1720420193587</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720420193587</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -136,6 +146,7 @@
     <MESSAGE value="Added steps, config and methods in Main Page" />
     <MESSAGE value="Project configuration for chromedriver" />
     <MESSAGE value="Fixed Comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Comment" />
+    <MESSAGE value="Added SearchResultPage and SearchResultPageLocators. Also fixed MainPageSteps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added SearchResultPage and SearchResultPageLocators. Also fixed MainPageSteps" />
   </component>
 </project>
