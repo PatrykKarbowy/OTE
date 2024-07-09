@@ -23,7 +23,7 @@ public class MainWorker {
         return driver;
     }
 
-    public void start(){
+    public void start() throws InterruptedException{
         driver = configureDriver();
         driver.get(MainPageLocators.PAGE_URL);
         mainPageSteps = new MainPageSteps(driver);

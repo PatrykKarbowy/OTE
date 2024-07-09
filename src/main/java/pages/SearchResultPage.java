@@ -7,9 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utils.SearchItemObject;
+import utils.UtilsMethods;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class SearchResultPage extends BasicPage{
 
@@ -56,7 +58,9 @@ public class SearchResultPage extends BasicPage{
 
             float floatPrice = Float.parseFloat(price);
 
-            SearchItemObject itemObject = new SearchItemObject(floatPrice,title,link,locationDate,locationDate);
+            Map<String, String> separatedLocationDate = UtilsMethods.getSeparatedDateLocation(locationDate);
+
+            SearchItemObject itemObject = new SearchItemObject(floatPrice,title,link,separatedLocationDate.get("Date"),separatedLocationDate.get("City"));
             searchItemObjectList.add(itemObject);
         }
         return searchItemObjectList;
