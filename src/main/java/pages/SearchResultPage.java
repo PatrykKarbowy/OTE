@@ -24,18 +24,6 @@ public class SearchResultPage extends BasicPage{
     @FindBy(css = SearchResultPageLocators.PRODUCTS_ON_PAGE_CSS_SELECTOR)
     private List<WebElement> productsOnPage;
 
-//    @FindBy(tagName = SearchResultPageLocators.PRODUCT_TITLE_TAG_NAME)
-//    private WebElement productTitle;
-//
-//    @FindBy(css = SearchResultPageLocators.PRODUCT_PRICE_CSS_SELECTOR)
-//    private WebElement productPrice;
-//
-//    @FindBy(css = SearchResultPageLocators.PRODUCT_LINK_CSS_SELECTOR)
-//    private WebElement productLink;
-//
-//    @FindBy(css = SearchResultPageLocators.PRODUCT_LOCATION_DATE_CSS_SELECTOR)
-//    private WebElement productLocationDate;
-
     public SearchResultPage(WebDriver driver){
         super(driver);
     }
@@ -47,16 +35,17 @@ public class SearchResultPage extends BasicPage{
          priceRangeTo.sendKeys(String.valueOf(priceTo));
     }
 
-    public List<SearchItemObject> getValuesFromSearchResult(){
+    public List<SearchItemObject> getValuesFromSearchResult() throws InterruptedException{
         List<SearchItemObject> searchItemObjectList = new ArrayList<>();
+        implicitlyWait(2);
         wait.until(ExpectedConditions.visibilityOfAllElements(productsOnPage));
         for (WebElement product : productsOnPage){
             String title = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_TITLE_TAG_NAME)).getText();
             String price = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_PRICE_CSS_SELECTOR)).getText();
-            String link = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_LINK_CSS_SELECTOR)).getText();
+            String link = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_LINK_TAG_NAME)).getText();
             String locationDate = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_LOCATION_DATE_CSS_SELECTOR)).getText();
 
-            float floatPrice = Float.parseFloat(price);
+            float floatPrice = UtilsMethods.getPriceFromText(price);
 
             Map<String, String> separatedLocationDate = UtilsMethods.getSeparatedDateLocation(locationDate);
 

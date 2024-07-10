@@ -17,4 +17,8 @@ public class UtilsMethods {
         return separatedDateLocation;
     }
 
-}
+    public static float getPriceFromText(String priceText){
+        String[] textParts = priceText.split(" ");
+        return Float.parseFloat(textParts[0].trim().replace(",","."));
+        }
+    }
