@@ -11,5 +11,6 @@ public class Main {
 
         MainWorker mainWorker = new MainWorker(config);
         mainWorker.start();
+        mainWorker.stop();
     }
 }

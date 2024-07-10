@@ -3,6 +3,7 @@ package steps;
 import org.openqa.selenium.WebDriver;
 import pages.BasicPage;
 import pages.SearchResultPage;
+import utils.ExcelWriter;
 
 public class SearchResultPageSteps extends BasicPage {
     private SearchResultPage searchResultPage = new SearchResultPage(driver);
@@ -15,8 +16,9 @@ public class SearchResultPageSteps extends BasicPage {
         implicitlyWait(2);
         searchResultPage.setPriceRange(priceFrom, priceTo);
     }
-    public void saveAllItemTextObjectsToExcel(){
-
+    public void saveAllItemTextObjectsToExcel() throws InterruptedException{
+        ExcelWriter excelWriter = new ExcelWriter((short)12, true);
+        excelWriter.saveSearchResultToExcelFile("OLX_Search_Result","Search_Result",searchResultPage.getValuesFromSearchResult());
     }
 
 }
