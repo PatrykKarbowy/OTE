@@ -42,7 +42,7 @@ public class SearchResultPage extends BasicPage{
         for (WebElement product : productsOnPage){
             String title = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_TITLE_TAG_NAME)).getText();
             String price = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_PRICE_CSS_SELECTOR)).getText();
-            String link = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_LINK_TAG_NAME)).getText();
+            String link = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_LINK_TAG_NAME)).getAttribute("href");
             String locationDate = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_LOCATION_DATE_CSS_SELECTOR)).getText();
 
             float floatPrice = UtilsMethods.getPriceFromText(price);
