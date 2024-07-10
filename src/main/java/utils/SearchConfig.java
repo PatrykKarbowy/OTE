@@ -15,6 +15,12 @@ public class SearchConfig {
     @Option(names = {"-e", "--elements"}, description = "Number of elements to include in excel file", defaultValue = "5")
     private int saveElements;
 
+    @Option(names = {"-f", "--pricefrom"}, description = "Starting price", defaultValue = "1")
+    private int priceFrom;
+
+    @Option(names = {"-t", "--priceto"}, description = "Maximum price", defaultValue = "1000000")
+    private int priceTo;
+
     public String getSearchPhrase() {
         return searchPhrase;
     }
@@ -25,5 +31,14 @@ public class SearchConfig {
 
     public int getSaveElements() {
         return saveElements;
+
+    }
+
+    public int getPriceFrom() {
+        return priceFrom;
+    }
+
+    public int getPriceTo() {
+        return priceTo;
     }
 }

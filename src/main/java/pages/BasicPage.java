@@ -15,4 +15,10 @@ public class BasicPage {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
+
+    public void implicitlyWait(int numberOfSeconds) throws InterruptedException {
+        synchronized (driver) {
+            driver.wait(numberOfSeconds * 1000);
+        }
+    }
 }
