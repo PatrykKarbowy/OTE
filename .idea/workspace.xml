@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added Utils Method and started to implement small refactor to add implicit wait">
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added logger and logs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/locators/SearchResultPageLocators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/locators/SearchResultPageLocators.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,13 +17,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="olx-main-page" />
+        <entry key="$PROJECT_DIR$" value="olx-search-result-page" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,9 +42,10 @@
   "keyToString": {
     "Application.Honda HRV configuration.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.Testowa.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "olx-search-result-page",
+    "git-widget-placeholder": "excel-writer",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/resources",
     "onboarding.tips.debug.path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/java/Main.java",
@@ -60,7 +59,7 @@
       <recent name="C:\Users\Togo\Desktop\PATRYK\Coding\Java\Automat\OTE-Olx_To_Excel\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Testowa">
     <configuration name="Honda HRV configuration" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OTE-Olx_To_Excel" />
@@ -69,6 +68,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Testowa" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OTE-Olx_To_Excel" />
+      <option name="PROGRAM_PARAMETERS" value="-p &quot;Rower górski&quot; -l &quot;Żory&quot; -e 10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Honda HRV configuration" />
+      <item itemvalue="Application.Testowa" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -151,7 +162,39 @@
       <option name="project" value="LOCAL" />
       <updated>1720551191375</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added text to price convert method and optimized process using implicit waits to ensure everything is loaded properly for now">
+      <option name="closed" value="true" />
+      <created>1720640186885</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720640186885</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added simple ExcelWriter class and updated methods to make it working in MainWorker">
+      <option name="closed" value="true" />
+      <created>1720643344502</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1720643344502</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed link search and simplified getSeparatedDateLocation method">
+      <option name="closed" value="true" />
+      <created>1720644211356</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720644211356</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Added logger and logs">
+      <option name="closed" value="true" />
+      <created>1720714183231</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720714183231</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,6 +207,10 @@
     <MESSAGE value="Added SearchResultPage and SearchResultPageLocators. Also fixed MainPageSteps" />
     <MESSAGE value="Added new methods to get text and improved config file" />
     <MESSAGE value="Added Utils Method and started to implement small refactor to add implicit wait" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Utils Method and started to implement small refactor to add implicit wait" />
+    <MESSAGE value="Added text to price convert method and optimized process using implicit waits to ensure everything is loaded properly for now" />
+    <MESSAGE value="Added simple ExcelWriter class and updated methods to make it working in MainWorker" />
+    <MESSAGE value="Fixed link search and simplified getSeparatedDateLocation method" />
+    <MESSAGE value="Added logger and logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added logger and logs" />
   </component>
 </project>

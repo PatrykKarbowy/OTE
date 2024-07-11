@@ -30,5 +30,10 @@ public class MainWorker {
         mainPageSteps.searchPhrase(cfg.getSearchPhrase(), cfg.getSearchLocation());
         searchResultPageSteps = new SearchResultPageSteps(driver);
         searchResultPageSteps.setFilters(cfg.getPriceFrom(), cfg.getPriceTo());
+        searchResultPageSteps.saveAllItemTextObjectsToExcel();
+    }
+
+    public void stop(){
+        driver.quit();
     }
 }
