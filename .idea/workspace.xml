@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Fixed link search and simplified getSeparatedDateLocation method">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added logger and logs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -40,27 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Honda HRV configuration.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;excel-writer&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/resources&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/java/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Honda HRV configuration.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Testowa.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "excel-writer",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/resources",
+    "onboarding.tips.debug.path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/java/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Togo\Desktop\PATRYK\Coding\Java\Automat\OTE-Olx_To_Excel\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Testowa">
     <configuration name="Honda HRV configuration" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OTE-Olx_To_Excel" />
@@ -69,6 +68,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Testowa" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="OTE-Olx_To_Excel" />
+      <option name="PROGRAM_PARAMETERS" value="-p &quot;Rower górski&quot; -l &quot;Żory&quot; -e 10" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Honda HRV configuration" />
+      <item itemvalue="Application.Testowa" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720644211356</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added logger and logs">
+      <option name="closed" value="true" />
+      <created>1720714183231</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1720714183231</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -191,6 +210,7 @@
     <MESSAGE value="Added text to price convert method and optimized process using implicit waits to ensure everything is loaded properly for now" />
     <MESSAGE value="Added simple ExcelWriter class and updated methods to make it working in MainWorker" />
     <MESSAGE value="Fixed link search and simplified getSeparatedDateLocation method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed link search and simplified getSeparatedDateLocation method" />
+    <MESSAGE value="Added logger and logs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added logger and logs" />
   </component>
 </project>
