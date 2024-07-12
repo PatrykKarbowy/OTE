@@ -33,7 +33,7 @@ public class UtilsMethods {
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String specialFormatCut = "Odświeżono dnia";
         if (olxDate.contains(specialFormatCut)){
-            olxDate = olxDate.split(specialFormatCut)[1];
+            olxDate = olxDate.split(specialFormatCut)[1].trim();
         }
         try {
             LocalDate date = LocalDate.parse(olxDate, inputFormatter);
