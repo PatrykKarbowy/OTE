@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added parsed argument in code">
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added date in file formats, created method to return current date as a String">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +41,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Honda HRV configuration.executor": "Run",
+    "Application.Honda HRV configuration.executor": "Debug",
     "Application.Main.executor": "Run",
     "Application.Testowa.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -73,7 +73,7 @@
     <configuration name="Testowa" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OTE-Olx_To_Excel" />
-      <option name="PROGRAM_PARAMETERS" value="-p &quot;Parowar Tefal&quot; -l &quot;Żory&quot; -e 10 -f 50 -t 150" />
+      <option name="PROGRAM_PARAMETERS" value="-p &quot;Mieszkanie&quot; -l &quot;Rybnik&quot; -e 100 -f 150000 -t 600000" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720798780212</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added date in file formats, created method to return current date as a String">
+      <option name="closed" value="true" />
+      <created>1720799469340</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720799469340</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -231,6 +239,7 @@
     <MESSAGE value="Added logger and logs" />
     <MESSAGE value="Added additional date converter" />
     <MESSAGE value="Added parsed argument in code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added parsed argument in code" />
+    <MESSAGE value="Added date in file formats, created method to return current date as a String" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added date in file formats, created method to return current date as a String" />
   </component>
 </project>
