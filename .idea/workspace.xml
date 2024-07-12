@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added additional date converter">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added parsed argument in code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ExcelWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ExcelWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="olx-search-result-page" />
+        <entry key="$PROJECT_DIR$" value="excel-writer" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +46,7 @@
     "Application.Testowa.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "excel-writer",
+    "git-widget-placeholder": "code-optimization",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel",
     "onboarding.tips.debug.path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/java/Main.java",
@@ -207,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720716250388</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added parsed argument in code">
+      <option name="closed" value="true" />
+      <created>1720798780212</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720798780212</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -225,6 +230,7 @@
     <MESSAGE value="Fixed link search and simplified getSeparatedDateLocation method" />
     <MESSAGE value="Added logger and logs" />
     <MESSAGE value="Added additional date converter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added additional date converter" />
+    <MESSAGE value="Added parsed argument in code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added parsed argument in code" />
   </component>
 </project>
