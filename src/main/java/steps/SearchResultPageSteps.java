@@ -19,9 +19,9 @@ public class SearchResultPageSteps extends BasicPage {
         implicitlyWait(2);
         searchResultPage.setPriceRange(priceFrom, priceTo);
     }
-    public void saveAllItemTextObjectsToExcel() throws InterruptedException{
+    public void saveAllItemTextObjectsToExcel(int numberOfProductsToSave) throws InterruptedException{
         ExcelWriter excelWriter = new ExcelWriter((short)12, true);
-        excelWriter.saveSearchResultToExcelFile("OLX_Search_Result","Search_Result",searchResultPage.getValuesFromSearchResult());
+        excelWriter.saveSearchResultToExcelFile("OLX_Search_Result","Search_Result",searchResultPage.getValuesFromSearchResult(numberOfProductsToSave));
         logger.info("Saved Excel with found products in: /OLX_Search_Result.xlsx");
     }
 
