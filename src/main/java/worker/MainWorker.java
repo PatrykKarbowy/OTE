@@ -30,7 +30,7 @@ public class MainWorker {
         mainPageSteps.searchPhrase(cfg.getSearchPhrase(), cfg.getSearchLocation());
         searchResultPageSteps = new SearchResultPageSteps(driver);
         searchResultPageSteps.setFilters(cfg.getPriceFrom(), cfg.getPriceTo());
-        searchResultPageSteps.saveAllItemTextObjectsToExcel();
+        searchResultPageSteps.saveAllItemTextObjectsToExcel(cfg.getSaveElements());
     }
 
     public void stop(){

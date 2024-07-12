@@ -35,11 +35,12 @@ public class SearchResultPage extends BasicPage{
          priceRangeTo.sendKeys(String.valueOf(priceTo));
     }
 
-    public List<SearchItemObject> getValuesFromSearchResult() throws InterruptedException{
+    public List<SearchItemObject> getValuesFromSearchResult(int numberOfReturnedProducts) throws InterruptedException{
         List<SearchItemObject> searchItemObjectList = new ArrayList<>();
         implicitlyWait(2);
         wait.until(ExpectedConditions.visibilityOfAllElements(productsOnPage));
-        for (WebElement product : productsOnPage){
+        for (int i=0; i<= numberOfReturnedProducts; i++){
+            WebElement product = productsOnPage.get(i);
             String title = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_TITLE_TAG_NAME)).getText();
             String price = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_PRICE_CSS_SELECTOR)).getText();
             String link = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_LINK_TAG_NAME)).getAttribute("href");
