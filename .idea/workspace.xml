@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added date in file formats, created method to return current date as a String">
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Optimized search function and added new logging formatting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pages/SearchResultPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +60,7 @@
       <recent name="C:\Users\Togo\Desktop\PATRYK\Coding\Java\Automat\OTE-Olx_To_Excel\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Testowa">
+  <component name="RunManager" selected="Application.Honda HRV configuration">
     <configuration name="Honda HRV configuration" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OTE-Olx_To_Excel" />
@@ -220,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720799469340</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Optimized search function and added new logging formatting">
+      <option name="closed" value="true" />
+      <created>1720800686892</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720800686892</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,6 +247,7 @@
     <MESSAGE value="Added additional date converter" />
     <MESSAGE value="Added parsed argument in code" />
     <MESSAGE value="Added date in file formats, created method to return current date as a String" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added date in file formats, created method to return current date as a String" />
+    <MESSAGE value="Optimized search function and added new logging formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized search function and added new logging formatting" />
   </component>
 </project>
