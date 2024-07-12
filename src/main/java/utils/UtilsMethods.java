@@ -25,7 +25,13 @@ public class UtilsMethods {
 
     public static float getPriceFromText(String priceText){
         String[] textParts = priceText.split(" ");
-        return Float.parseFloat(textParts[0].trim().replace(",","."));
+        String priceString = "";
+        for (String textPart : textParts){
+            if (isNumeric(textPart) || textPart.equals(",")){
+                priceString += textPart;
+            }
+        }
+        return Float.parseFloat(priceString.trim().replace(",","."));
         }
 
     private static String convertToIsoLocalDate(String olxDate){
@@ -46,5 +52,14 @@ public class UtilsMethods {
     public static String getCurrentDate(){
         LocalDate today = LocalDate.now();
         return today.format(DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
+    public static boolean isNumeric(String stringNumber) {
+        try {
+            Integer.parseInt(stringNumber);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
     }
