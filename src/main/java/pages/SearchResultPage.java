@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.Keys;
 import utils.SearchItemObject;
 import utils.UtilsMethods;
 
@@ -36,6 +37,7 @@ public class SearchResultPage extends BasicPage{
          priceRangeFrom.sendKeys(String.valueOf(priceFrom));
          wait.until(ExpectedConditions.visibilityOf(priceRangeTo));
          priceRangeTo.sendKeys(String.valueOf(priceTo));
+         priceRangeTo.sendKeys(Keys.ENTER);
     }
 
     public List<SearchItemObject> getValuesFromSearchResult(int numberOfReturnedProducts) throws InterruptedException{
