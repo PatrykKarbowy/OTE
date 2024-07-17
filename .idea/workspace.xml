@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added logger and logs">
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Optimized search function and added new logging formatting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UtilsMethods.java" afterDir="false" />
     </list>
@@ -24,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="olx-search-result-page" />
+        <entry key="$PROJECT_DIR$" value="excel-writer" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,14 +40,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Honda HRV configuration.executor": "Run",
+    "Application.Honda HRV configuration.executor": "Debug",
     "Application.Main.executor": "Run",
     "Application.Testowa.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "excel-writer",
+    "git-widget-placeholder": "code-optimization",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/resources",
+    "last_opened_file_path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel",
     "onboarding.tips.debug.path": "C:/Users/Togo/Desktop/PATRYK/Coding/Java/Automat/OTE-Olx_To_Excel/src/main/java/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -56,10 +56,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Togo\Desktop\PATRYK\Coding\Java\Automat\OTE-Olx_To_Excel" />
       <recent name="C:\Users\Togo\Desktop\PATRYK\Coding\Java\Automat\OTE-Olx_To_Excel\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Testowa">
+  <component name="RunManager" selected="Application.Honda HRV configuration">
     <configuration name="Honda HRV configuration" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OTE-Olx_To_Excel" />
@@ -71,7 +72,7 @@
     <configuration name="Testowa" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OTE-Olx_To_Excel" />
-      <option name="PROGRAM_PARAMETERS" value="-p &quot;Rower górski&quot; -l &quot;Żory&quot; -e 10" />
+      <option name="PROGRAM_PARAMETERS" value="-p &quot;Mieszkanie&quot; -l &quot;Rybnik&quot; -e 100 -f 150000 -t 600000" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -194,7 +195,39 @@
       <option name="project" value="LOCAL" />
       <updated>1720714183231</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added additional date converter">
+      <option name="closed" value="true" />
+      <created>1720716250388</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720716250388</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added parsed argument in code">
+      <option name="closed" value="true" />
+      <created>1720798780212</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720798780212</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added date in file formats, created method to return current date as a String">
+      <option name="closed" value="true" />
+      <created>1720799469340</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720799469340</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Optimized search function and added new logging formatting">
+      <option name="closed" value="true" />
+      <created>1720800686892</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720800686892</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -211,6 +244,10 @@
     <MESSAGE value="Added simple ExcelWriter class and updated methods to make it working in MainWorker" />
     <MESSAGE value="Fixed link search and simplified getSeparatedDateLocation method" />
     <MESSAGE value="Added logger and logs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added logger and logs" />
+    <MESSAGE value="Added additional date converter" />
+    <MESSAGE value="Added parsed argument in code" />
+    <MESSAGE value="Added date in file formats, created method to return current date as a String" />
+    <MESSAGE value="Optimized search function and added new logging formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized search function and added new logging formatting" />
   </component>
 </project>

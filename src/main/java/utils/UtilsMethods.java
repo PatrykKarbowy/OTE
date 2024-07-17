@@ -13,9 +13,7 @@ public class UtilsMethods {
         Map<String, String> separatedDateLocation = new HashMap<>();
         String[] textParts = dateLocationText.split(" - ");
         if (textParts[1].contains("Dzisiaj")){
-            LocalDate today = LocalDate.now();
-            String dateString = today.format(DateTimeFormatter.ISO_LOCAL_DATE);
-            textParts[1] = dateString;
+            textParts[1] = getCurrentDate();
         }
         else{
             textParts[1] = convertToIsoLocalDate(textParts[1]);
@@ -27,7 +25,13 @@ public class UtilsMethods {
 
     public static float getPriceFromText(String priceText){
         String[] textParts = priceText.split(" ");
-        return Float.parseFloat(textParts[0].trim().replace(",","."));
+        String priceString = "";
+        for (String textPart : textParts){
+            if (isNumeric(textPart) || textPart.equals(",")){
+                priceString += textPart;
+            }
+        }
+        return Float.parseFloat(priceString.trim().replace(",","."));
         }
 
     private static String convertToIsoLocalDate(String olxDate){
@@ -35,13 +39,27 @@ public class UtilsMethods {
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String specialFormatCut = "Odświeżono dnia";
         if (olxDate.contains(specialFormatCut)){
-            olxDate = olxDate.split(specialFormatCut)[1];
+            olxDate = olxDate.split(specialFormatCut)[1].trim();
         }
         try {
             LocalDate date = LocalDate.parse(olxDate, inputFormatter);
             return date.format(outputFormatter);
         } catch (DateTimeParseException e) {
             throw new IllegalArgumentException("Invalid date format, expected format: dd MMMM yyyy", e);
+        }
+    }
+
+    public static String getCurrentDate(){
+        LocalDate today = LocalDate.now();
+        return today.format(DateTimeFormatter.ISO_LOCAL_DATE);
+    }
+
+    public static boolean isNumeric(String stringNumber) {
+        try {
+            Integer.parseInt(stringNumber);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
     }

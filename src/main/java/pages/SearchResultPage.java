@@ -1,6 +1,8 @@
 package pages;
 
 import locators.SearchResultPageLocators;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SearchResultPage extends BasicPage{
+    private static final Logger logger = LogManager.getLogger(SearchResultPage.class);
 
     @FindBy(css = SearchResultPageLocators.PRICE_RANGE_FROM_CSS_SELECTOR)
     private WebElement priceRangeFrom;
@@ -35,11 +38,19 @@ public class SearchResultPage extends BasicPage{
          priceRangeTo.sendKeys(String.valueOf(priceTo));
     }
 
-    public List<SearchItemObject> getValuesFromSearchResult() throws InterruptedException{
+    public List<SearchItemObject> getValuesFromSearchResult(int numberOfReturnedProducts) throws InterruptedException{
         List<SearchItemObject> searchItemObjectList = new ArrayList<>();
         implicitlyWait(2);
         wait.until(ExpectedConditions.visibilityOfAllElements(productsOnPage));
-        for (WebElement product : productsOnPage){
+        int numberOfProductsToReturn = numberOfReturnedProducts;
+
+        if (numberOfProductsToReturn >= productsOnPage.size()){
+            numberOfProductsToReturn = productsOnPage.size() - 1;
+            logger.warn("Cannot find {}, found instead {} products",numberOfReturnedProducts, numberOfProductsToReturn);
+        }
+
+        for (int i=0; i<= numberOfProductsToReturn; i++){
+            WebElement product = productsOnPage.get(i);
             String title = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_TITLE_TAG_NAME)).getText();
             String price = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_PRICE_CSS_SELECTOR)).getText();
             String link = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_LINK_TAG_NAME)).getAttribute("href");

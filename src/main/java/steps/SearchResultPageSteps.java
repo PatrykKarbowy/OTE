@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import pages.BasicPage;
 import pages.SearchResultPage;
 import utils.ExcelWriter;
+import utils.UtilsMethods;
 
 public class SearchResultPageSteps extends BasicPage {
     private SearchResultPage searchResultPage = new SearchResultPage(driver);
@@ -19,10 +20,14 @@ public class SearchResultPageSteps extends BasicPage {
         implicitlyWait(2);
         searchResultPage.setPriceRange(priceFrom, priceTo);
     }
-    public void saveAllItemTextObjectsToExcel() throws InterruptedException{
+    public void saveAllItemTextObjectsToExcel(int numberOfProductsToSave) throws InterruptedException{
         ExcelWriter excelWriter = new ExcelWriter((short)12, true);
-        excelWriter.saveSearchResultToExcelFile("OLX_Search_Result","Search_Result",searchResultPage.getValuesFromSearchResult());
-        logger.info("Saved Excel with found products in: /OLX_Search_Result.xlsx");
+        String currentDate = UtilsMethods.getCurrentDate();
+        String fileName = "OLX_Search_Result_" + currentDate;
+        String sheetName = "Search_Result_" + currentDate;
+        String fileNameFormatted = fileName + ".xlsx";
+        excelWriter.saveSearchResultToExcelFile(fileName,sheetName,searchResultPage.getValuesFromSearchResult(numberOfProductsToSave));
+        logger.info("Saved Excel with found products in: {}",fileNameFormatted);
     }
 
 }
