@@ -12,28 +12,11 @@ import java.util.Collections;
 import java.util.List;
 
 public class ExcelWriter{
-    private String[] columns = {"Price", "Title", "Link", "Date", "City"};
     private Workbook workbook = new XSSFWorkbook();
     private CreationHelper createHelper = workbook.getCreationHelper();
     private Sheet sheet;
     private short headerFontHeight;
     private boolean isBold;
-
-    public boolean isBold() {
-        return isBold;
-    }
-
-    public void setBold(boolean bold) {
-        isBold = bold;
-    }
-
-    public short getHeaderFontHeight() {
-        return headerFontHeight;
-    }
-
-    public void setHeaderFontHeight(short headerFontHeight) {
-        this.headerFontHeight = headerFontHeight;
-    }
 
     public ExcelWriter(short headerFontHeight, boolean isBold){
         this.headerFontHeight = headerFontHeight;
@@ -69,9 +52,9 @@ public class ExcelWriter{
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont());
         Row headerRow = sheet.createRow(0);
-        for (int i = 0; i < columns.length; i++) {
+        for (int i = 0; i < SearchConfig.COLUMN_NAMES.length; i++) {
             Cell cell = headerRow.createCell(i);
-            cell.setCellValue(columns[i]);
+            cell.setCellValue(SearchConfig.COLUMN_NAMES[i]);
             cell.setCellStyle(headerCellStyle);
         }
     }
@@ -112,7 +95,7 @@ public class ExcelWriter{
         }
 
         // Resize all columns to fit the content size
-        for (int i = 0; i < columns.length; i++) {
+        for (int i = 0; i < SearchConfig.COLUMN_NAMES.length; i++) {
             sheet.autoSizeColumn(i);
         }
     }

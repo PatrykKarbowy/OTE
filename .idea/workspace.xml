@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Added clicking enter on maximum price to generate proper api endpoint">
+    <list default="true" id="9e21d9d9-d7ed-492a-9ccd-689b0f0442e7" name="Changes" comment="Small refactor - name resolving and window sizes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/steps/SearchResultPageSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ExcelWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ExcelWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/GuiConfigurator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/GuiConfigurator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/SearchConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/SearchConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/worker/MainWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721249978861</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Small refactor - name resolving and window sizes">
+      <option name="closed" value="true" />
+      <created>1721374206741</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1721374206741</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -270,6 +276,7 @@
     <MESSAGE value="Optimized search function and added new logging formatting" />
     <MESSAGE value="Added simply gui + optimized other classes to fit gui input/output" />
     <MESSAGE value="Added clicking enter on maximum price to generate proper api endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added clicking enter on maximum price to generate proper api endpoint" />
+    <MESSAGE value="Small refactor - name resolving and window sizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Small refactor - name resolving and window sizes" />
   </component>
 </project>

@@ -10,7 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -76,8 +78,8 @@ public class GuiConfigurator {
             }
         });
 
-        String[] columnNames = {"Price", "Title", "Link", "Date", "City"};
-        tableModel = new DefaultTableModel(columnNames, 0);
+
+        tableModel = new DefaultTableModel(SearchConfig.COLUMN_NAMES, 0);
         resultsTable = new JTable(tableModel);
         resultsTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         scrollPane = new JScrollPane(resultsTable);
@@ -108,6 +110,8 @@ public class GuiConfigurator {
             Sheet sheet = workbook.getSheetAt(0);
             tableModel.setRowCount(0);
 
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
             for (Row row : sheet) {
                 List<Object> rowData = new ArrayList<>();
                 for (Cell cell : row) {
@@ -117,7 +121,8 @@ public class GuiConfigurator {
                             break;
                         case NUMERIC:
                             if (DateUtil.isCellDateFormatted(cell)) {
-                                rowData.add(cell.getDateCellValue());
+                                Date date = cell.getDateCellValue();
+                                rowData.add(dateFormat.format(date));
                             } else {
                                 rowData.add(cell.getNumericCellValue());
                             }
@@ -135,7 +140,7 @@ public class GuiConfigurator {
                 tableModel.addRow(rowData.toArray());
             }
             scrollPane.setVisible(true);
-            frame.pack(); // Adjust the window size to fit the table
+            frame.pack();
 
         } catch (IOException e) {
             e.printStackTrace();
