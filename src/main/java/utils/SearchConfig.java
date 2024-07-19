@@ -1,25 +1,22 @@
 package utils;
-import picocli.CommandLine.Option;
-import picocli.CommandLine.Command;
 
-@Command(name = "Config", mixinStandardHelpOptions = true, version = "Config 1.0",
-        description = "Search configuration")
 public class SearchConfig {
-
-    @Option(names = {"-p", "--phrase"}, description = "Phrase to be found", required = true)
     private String searchPhrase;
-
-    @Option(names = {"-l", "--location"}, description = "Location to search in", required = true)
     private String searchLocation;
-
-    @Option(names = {"-e", "--elements"}, description = "Number of elements to include in excel file", defaultValue = "5")
     private int saveElements;
-
-    @Option(names = {"-f", "--pricefrom"}, description = "Starting price", defaultValue = "1")
     private int priceFrom;
-
-    @Option(names = {"-t", "--priceto"}, description = "Maximum price", defaultValue = "1000000")
     private int priceTo;
+    public static final String FILE_NAME = "OLX_Search_Result_" + UtilsMethods.getCurrentDate();
+    public static final String SHEET_NAME = "Search_Result_" + UtilsMethods.getCurrentDate();
+    public static final String[] COLUMN_NAMES = {"Price", "Title", "Link", "Date", "City"};
+
+    public SearchConfig(String searchPhrase, String searchLocation, int saveElements, int priceFrom, int priceTo) {
+        this.searchPhrase = searchPhrase;
+        this.searchLocation = searchLocation;
+        this.saveElements = saveElements;
+        this.priceFrom = priceFrom;
+        this.priceTo = priceTo;
+    }
 
     public String getSearchPhrase() {
         return searchPhrase;
@@ -41,4 +38,16 @@ public class SearchConfig {
     public int getPriceTo() {
         return priceTo;
     }
+
+    @Override
+    public String toString() {
+        return "SearchConfig{" +
+                "searchPhrase = '" + searchPhrase + '\'' +
+                ", searchLocation = '" + searchLocation + '\'' +
+                ", saveElements = " + saveElements +
+                ", priceFrom = " + priceFrom +
+                ", priceTo = " + priceTo +
+                '}';
+    }
+
 }
