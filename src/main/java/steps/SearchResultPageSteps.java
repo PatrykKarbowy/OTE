@@ -7,7 +7,6 @@ import pages.BasicPage;
 import pages.SearchResultPage;
 import utils.ExcelWriter;
 import utils.SearchConfig;
-import utils.UtilsMethods;
 
 public class SearchResultPageSteps extends BasicPage {
     private SearchResultPage searchResultPage = new SearchResultPage(driver);
