@@ -1,8 +1,10 @@
 package worker;
 
 import locators.MainPageLocators;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import steps.MainPageSteps;
 import steps.SearchResultPageSteps;
 import utils.SearchConfig;
@@ -20,6 +22,7 @@ public class MainWorker {
     private WebDriver configureDriver(){
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().window().setSize(new Dimension(1400,800));
         return driver;
     }
 

@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -73,7 +72,7 @@ public class GuiConfigurator {
         runButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 runProgram();
-                displayExcelInTable("OLX_Search_Result_2024-07-17.xlsx");
+                displayExcelInTable(SearchConfig.FILE_NAME+".xlsx");
             }
         });
 
@@ -104,11 +103,10 @@ public class GuiConfigurator {
     }
 
     private void displayExcelInTable(String filePath) {
-        try (FileInputStream fis = new FileInputStream(new File(filePath));
+        try (FileInputStream fis = new FileInputStream(filePath);
              Workbook workbook = new XSSFWorkbook(fis)) {
-
             Sheet sheet = workbook.getSheetAt(0);
-            tableModel.setRowCount(0); // Clear existing data
+            tableModel.setRowCount(0);
 
             for (Row row : sheet) {
                 List<Object> rowData = new ArrayList<>();
@@ -136,7 +134,7 @@ public class GuiConfigurator {
                 }
                 tableModel.addRow(rowData.toArray());
             }
-            scrollPane.setVisible(true); // Show the table once data is available
+            scrollPane.setVisible(true);
             frame.pack(); // Adjust the window size to fit the table
 
         } catch (IOException e) {

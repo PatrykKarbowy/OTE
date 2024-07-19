@@ -6,6 +6,8 @@ public class SearchConfig {
     private int saveElements;
     private int priceFrom;
     private int priceTo;
+    public static final String FILE_NAME = "OLX_Search_Result_" + UtilsMethods.getCurrentDate();
+    public static final String SHEET_NAME = "Search_Result_" + UtilsMethods.getCurrentDate();
 
     public SearchConfig(String searchPhrase, String searchLocation, int saveElements, int priceFrom, int priceTo) {
         this.searchPhrase = searchPhrase;
@@ -46,4 +48,5 @@ public class SearchConfig {
                 ", priceTo = " + priceTo +
                 '}';
     }
+
 }

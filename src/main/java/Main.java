@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        GuiConfigurator configApp = new GuiConfigurator(config -> {
+        GuiConfigurator guiConfigurator = new GuiConfigurator(config -> {
             MainWorker mainWorker = new MainWorker(config);
 
             logger.info("Starting program with the following configuration:");
@@ -22,6 +22,6 @@ public class Main {
             }
             mainWorker.stop();
         });
-        configApp.display();
+        guiConfigurator.display();
     }
 }
