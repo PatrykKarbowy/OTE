@@ -9,13 +9,12 @@ import java.util.Map;
 
 public class UtilsMethods {
 
-    public static Map<String, String> getSeparatedDateLocation(String dateLocationText){
+    public static Map<String, String> getSeparatedDateLocation(String dateLocationText) {
         Map<String, String> separatedDateLocation = new HashMap<>();
         String[] textParts = dateLocationText.split(" - ");
-        if (textParts[1].contains("Dzisiaj")){
+        if (textParts[1].contains("Dzisiaj")) {
             textParts[1] = getCurrentDate();
-        }
-        else{
+        } else {
             textParts[1] = convertToIsoLocalDate(textParts[1]);
         }
         separatedDateLocation.put("City", textParts[0].trim());
@@ -23,22 +22,22 @@ public class UtilsMethods {
         return separatedDateLocation;
     }
 
-    public static float getPriceFromText(String priceText){
+    public static float getPriceFromText(String priceText) {
         String[] textParts = priceText.split(" ");
         String priceString = "";
-        for (String textPart : textParts){
-            if (isNumeric(textPart) || textPart.equals(",")){
+        for (String textPart : textParts) {
+            if (isNumeric(textPart) || textPart.equals(",")) {
                 priceString += textPart;
             }
         }
-        return Float.parseFloat(priceString.trim().replace(",","."));
-        }
+        return Float.parseFloat(priceString.trim().replace(",", "."));
+    }
 
-    private static String convertToIsoLocalDate(String olxDate){
+    private static String convertToIsoLocalDate(String olxDate) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("dd MMMM yyyy", new Locale("pl"));
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         String specialFormatCut = "Odświeżono dnia";
-        if (olxDate.contains(specialFormatCut)){
+        if (olxDate.contains(specialFormatCut)) {
             olxDate = olxDate.split(specialFormatCut)[1].trim();
         }
         try {
@@ -49,7 +48,7 @@ public class UtilsMethods {
         }
     }
 
-    public static String getCurrentDate(){
+    public static String getCurrentDate() {
         LocalDate today = LocalDate.now();
         return today.format(DateTimeFormatter.ISO_LOCAL_DATE);
     }
@@ -62,4 +61,4 @@ public class UtilsMethods {
             return false;
         }
     }
-    }
+}

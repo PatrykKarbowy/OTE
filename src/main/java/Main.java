@@ -15,12 +15,9 @@ public class Main {
             logger.info("Starting program with the following configuration:");
             logger.info(config);
 
-            try {
-                mainWorker.start();
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            mainWorker.start();
             mainWorker.stop();
+
         });
         guiConfigurator.display();
     }

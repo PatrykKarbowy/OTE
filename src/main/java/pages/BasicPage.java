@@ -7,18 +7,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasicPage {
-    protected WebDriver driver;
+    protected final WebDriver driver;
     protected WebDriverWait wait;
 
-    public BasicPage(WebDriver driver){
+    public BasicPage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         PageFactory.initElements(driver, this);
     }
 
-    public void implicitlyWait(int numberOfSeconds) throws InterruptedException {
+    public void waitCertainPeriodOfTime(int numberOfSeconds) {
         synchronized (driver) {
-            driver.wait(numberOfSeconds * 1000);
+            try {
+                driver.wait(numberOfSeconds * 1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }
+

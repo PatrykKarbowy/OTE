@@ -1,10 +1,9 @@
 package worker;
 
-import locators.MainPageLocators;
+import config.MainConfig;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import steps.MainPageSteps;
 import steps.SearchResultPageSteps;
 import utils.SearchConfig;
@@ -15,20 +14,20 @@ public class MainWorker {
     private SearchResultPageSteps searchResultPageSteps;
     private SearchConfig cfg;
 
-    public MainWorker(SearchConfig cfg){
+    public MainWorker(SearchConfig cfg) {
         this.cfg = cfg;
     }
 
-    private WebDriver configureDriver(){
+    private WebDriver configureDriver() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().window().setSize(new Dimension(1400,800));
+        driver.manage().window().setSize(new Dimension(1400, 800));
         return driver;
     }
 
-    public void start() throws InterruptedException{
+    public void start() {
         driver = configureDriver();
-        driver.get(MainPageLocators.PAGE_URL);
+        driver.get(MainConfig.PAGE_URL);
         mainPageSteps = new MainPageSteps(driver);
         mainPageSteps.searchPhrase(cfg.getSearchPhrase(), cfg.getSearchLocation());
         searchResultPageSteps = new SearchResultPageSteps(driver);
@@ -36,7 +35,7 @@ public class MainWorker {
         searchResultPageSteps.saveAllItemTextObjectsToExcel(cfg.getSaveElements());
     }
 
-    public void stop(){
+    public void stop() {
         driver.quit();
     }
 }

@@ -1,7 +1,6 @@
 package locators;
 
 public class MainPageLocators {
-    public static final String PAGE_URL = "http://www.olx.pl";
     public static final String SEARCH_BAR_XPATH = "//*[@id=\"search\"]";
     public static final String SEARCH_LOCATION_XPATH = "//*[@id=\"location-input\"]";
     public static final String SEARCH_BUTTON_CSS_SELECTOR = "button[data-testid='search-submit']";

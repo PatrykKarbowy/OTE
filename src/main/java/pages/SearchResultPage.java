@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class SearchResultPage extends BasicPage{
+public class SearchResultPage extends BasicPage {
     private static final Logger logger = LogManager.getLogger(SearchResultPage.class);
 
     @FindBy(css = SearchResultPageLocators.PRICE_RANGE_FROM_CSS_SELECTOR)
@@ -28,30 +28,30 @@ public class SearchResultPage extends BasicPage{
     @FindBy(css = SearchResultPageLocators.PRODUCTS_ON_PAGE_CSS_SELECTOR)
     private List<WebElement> productsOnPage;
 
-    public SearchResultPage(WebDriver driver){
+    public SearchResultPage(WebDriver driver) {
         super(driver);
     }
 
-    public void setPriceRange(int priceFrom, int priceTo){
-         wait.until(ExpectedConditions.visibilityOf(priceRangeFrom));
-         priceRangeFrom.sendKeys(String.valueOf(priceFrom));
-         wait.until(ExpectedConditions.visibilityOf(priceRangeTo));
-         priceRangeTo.sendKeys(String.valueOf(priceTo));
-         priceRangeTo.sendKeys(Keys.ENTER);
+    public void setPriceRange(int priceFrom, int priceTo) {
+        wait.until(ExpectedConditions.visibilityOf(priceRangeFrom));
+        priceRangeFrom.sendKeys(String.valueOf(priceFrom));
+        wait.until(ExpectedConditions.visibilityOf(priceRangeTo));
+        priceRangeTo.sendKeys(String.valueOf(priceTo));
+        priceRangeTo.sendKeys(Keys.ENTER);
     }
 
-    public List<SearchItemObject> getValuesFromSearchResult(int numberOfReturnedProducts) throws InterruptedException{
+    public List<SearchItemObject> getValuesFromSearchResult(int numberOfReturnedProducts) {
         List<SearchItemObject> searchItemObjectList = new ArrayList<>();
-        implicitlyWait(2);
+        waitCertainPeriodOfTime(2);
         wait.until(ExpectedConditions.visibilityOfAllElements(productsOnPage));
         int numberOfProductsToReturn = numberOfReturnedProducts;
 
-        if (numberOfProductsToReturn >= productsOnPage.size()){
+        if (numberOfProductsToReturn >= productsOnPage.size()) {
             numberOfProductsToReturn = productsOnPage.size() - 1;
-            logger.warn("Cannot find {}, found instead {} products",numberOfReturnedProducts, numberOfProductsToReturn);
+            logger.warn("Cannot find {}, found instead {} products", numberOfReturnedProducts, numberOfProductsToReturn);
         }
 
-        for (int i=0; i<= numberOfProductsToReturn; i++){
+        for (int i = 0; i <= numberOfProductsToReturn; i++) {
             WebElement product = productsOnPage.get(i);
             String title = product.findElement(By.tagName(SearchResultPageLocators.PRODUCT_TITLE_TAG_NAME)).getText();
             String price = product.findElement(By.cssSelector(SearchResultPageLocators.PRODUCT_PRICE_CSS_SELECTOR)).getText();
@@ -62,7 +62,7 @@ public class SearchResultPage extends BasicPage{
 
             Map<String, String> separatedLocationDate = UtilsMethods.getSeparatedDateLocation(locationDate);
 
-            SearchItemObject itemObject = new SearchItemObject(floatPrice,title,link,separatedLocationDate.get("Date"),separatedLocationDate.get("City"));
+            SearchItemObject itemObject = new SearchItemObject(floatPrice, title, link, separatedLocationDate.get("Date"), separatedLocationDate.get("City"));
             searchItemObjectList.add(itemObject);
         }
         return searchItemObjectList;

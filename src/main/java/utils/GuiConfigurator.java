@@ -1,5 +1,6 @@
 package utils;
 
+import config.MainConfig;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -74,12 +75,12 @@ public class GuiConfigurator {
         runButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 runProgram();
-                displayExcelInTable(SearchConfig.FILE_NAME+".xlsx");
+                displayExcelInTable(MainConfig.FILE_NAME + ".xlsx");
             }
         });
 
 
-        tableModel = new DefaultTableModel(SearchConfig.COLUMN_NAMES, 0);
+        tableModel = new DefaultTableModel(MainConfig.COLUMN_NAMES, 0);
         resultsTable = new JTable(tableModel);
         resultsTable.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         scrollPane = new JScrollPane(resultsTable);

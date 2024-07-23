@@ -1,5 +1,6 @@
 package utils;
 
+import config.MainConfig;
 import org.apache.poi.common.usermodel.HyperlinkType;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -11,19 +12,19 @@ import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
 
-public class ExcelWriter{
+public class ExcelWriter {
     private Workbook workbook = new XSSFWorkbook();
     private CreationHelper createHelper = workbook.getCreationHelper();
     private Sheet sheet;
     private short headerFontHeight;
     private boolean isBold;
 
-    public ExcelWriter(short headerFontHeight, boolean isBold){
+    public ExcelWriter(short headerFontHeight, boolean isBold) {
         this.headerFontHeight = headerFontHeight;
         this.isBold = isBold;
     }
 
-    public void saveSearchResultToExcelFile(String fileName, String sheetName, List<SearchItemObject> searchItemObjectList){
+    public void saveSearchResultToExcelFile(String fileName, String sheetName, List<SearchItemObject> searchItemObjectList) {
         Collections.sort(searchItemObjectList, (o1, o2) -> {
             LocalDate date1 = LocalDate.parse(o1.getDate());
             LocalDate date2 = LocalDate.parse(o2.getDate());
@@ -52,14 +53,14 @@ public class ExcelWriter{
         CellStyle headerCellStyle = workbook.createCellStyle();
         headerCellStyle.setFont(headerFont());
         Row headerRow = sheet.createRow(0);
-        for (int i = 0; i < SearchConfig.COLUMN_NAMES.length; i++) {
+        for (int i = 0; i < MainConfig.COLUMN_NAMES.length; i++) {
             Cell cell = headerRow.createCell(i);
-            cell.setCellValue(SearchConfig.COLUMN_NAMES[i]);
+            cell.setCellValue(MainConfig.COLUMN_NAMES[i]);
             cell.setCellStyle(headerCellStyle);
         }
     }
 
-    private void fillExcelWithProductData(List<SearchItemObject> searchItemObjectList){
+    private void fillExcelWithProductData(List<SearchItemObject> searchItemObjectList) {
         CellStyle priceCellStyle = createPriceCellStyle();
         CellStyle dateCellStyle = createDateCellStyle();
         CellStyle hyperlinkCellStyle = createHyperlinkCellStyle();
@@ -95,12 +96,12 @@ public class ExcelWriter{
         }
 
         // Resize all columns to fit the content size
-        for (int i = 0; i < SearchConfig.COLUMN_NAMES.length; i++) {
+        for (int i = 0; i < MainConfig.COLUMN_NAMES.length; i++) {
             sheet.autoSizeColumn(i);
         }
     }
 
-    private Font headerFont(){
+    private Font headerFont() {
         Font headerFont = workbook.createFont();
         headerFont.setBold(isBold);
         headerFont.setFontHeightInPoints(headerFontHeight);

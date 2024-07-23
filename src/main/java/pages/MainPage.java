@@ -23,21 +23,21 @@ public class MainPage extends BasicPage {
     @FindBy(xpath = MainPageLocators.ACCEPT_COOKIES_BUTTON_XPATH)
     private WebElement acceptCookiesButton;
 
-    public MainPage(WebDriver driver){
+    public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    public void acceptCookies(){
+    public void acceptCookies() {
         wait.until(ExpectedConditions.visibilityOf(acceptCookiesButton));
         acceptCookiesButton.click();
     }
 
-    public void writeSearchPhrase(String phrase){
+    public void writeSearchPhrase(String phrase) {
         wait.until(ExpectedConditions.visibilityOf(searchBar));
         searchBar.sendKeys(phrase);
     }
 
-    public void writeSearchLocation(String location){
+    public void writeSearchLocation(String location) {
         wait.until(ExpectedConditions.visibilityOf(searchLocation));
         searchLocation.sendKeys(location);
         List<WebElement> searchLocationSuggestions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
@@ -46,7 +46,7 @@ public class MainPage extends BasicPage {
         searchLocationSuggestions.get(0).click();
     }
 
-    public void searchResults(){
+    public void searchResults() {
         wait.until(ExpectedConditions.elementToBeClickable(searchButton));
         searchButton.click();
     }
